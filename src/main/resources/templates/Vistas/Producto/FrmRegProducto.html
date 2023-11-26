@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
-	<head>
-		<title>Registrar Producto</title>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="PaginaMaestra::head">
+	<title>Registrar Producto</title>
 	</head>
 	<body>
-		<h1 align="center">Registrar Producto</h1>
-		<form th:action="@{GuardarProducto}" th:Object="${regproducto}" method="post"> 
-			<table align="center">
-				<tr>
-					<td>Nombre</td><td><input type="text" th:field="*{nombrecl3}"></td>
-				</tr>
-				<tr>
-					<td>Precio</td><td><input type="number" th:field="*{precioventacl3}"></td>
-				</tr>
-				<tr>
-					<td>PrecioVen</td><td><input type="number" th:field="*{preciocompcl3}"></td>
-				</tr>
-				<tr>
-					<td>Estado</td><td><input type="text" th:field="*{estadocl3}"></td>
-				</tr>
-				<tr>
-					<td>Descrip</td><td><input type="text" th:field="*{descripcl3}"></td>
-				</tr>
-				<tr>
-					<td>Stock</td><td><input type="text" th:field="*{stock}"></td>
-				</tr>
-			</table>
-		</form>
+		<header th:replace="PaginaMaestra::header"></header>
+		<nav th:replace="PaginaMaestra::menu"></nav>
+		
+		<div class="container">
+  			<div class="row justify-content-center minh-100">
+    			<div class="col-lg-6">
+		
+					<h1 align="center">Registrar Producto</h1>
+					<form class="bg-white p-3" th:action="@{/ControlProducto/GuardarProducto}" th:Object="${regproducto}" method="post"> 
+						<div class="form-group">
+						    <label for="nombrecl3">Nombre</label>
+						    <input type="text" class="form-control" th:field="*{nombrecl3}">
+						</div>
+						<div class="form-group">
+						    <label for="precioventacl3">Precio</label>
+						    <input type="number" class="form-control" th:field="*{precioventacl3}">
+						</div>
+						<div class="form-group">
+						    <label for="preciocompcl3">Precio ven</label>
+						    <input type="number" class="form-control" th:field="*{preciocompcl3}">
+						</div>
+						<div class="form-group">
+						    <label for="estadocl3">Estado</label>
+						    <select class="form-control" th:field="*{estadocl3}">
+			                    <option value="Vigente">Vigente</option>
+			                    <option value="No Vigente">No Vigente</option>
+			                </select>
+						</div>
+						<div class="form-group">
+						    <label for="descripcl3">Descripcion</label>
+						    <input type="text" class="form-control" th:field="*{descripcl3}">
+						</div>
+						<div class="form-group">
+						    <label for="stock">Stock</label>
+						    <input type="number" class="form-control" th:field="*{stock}">
+						</div>
+						<button type="submit" class="btn btn-success mb-3">Registrar</button>
+			            <a th:href="@{/ControlProducto/ListadoProductos}" class="btn btn-dark mb-3">Regresar</a>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer th:replace="PaginaMaestra::footer"></footer>
 	</body>
 </html>

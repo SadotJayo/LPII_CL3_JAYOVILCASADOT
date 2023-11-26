@@ -10,7 +10,6 @@ import com.bd.productos.repositorio.IProducto;
 
 @Service
 public class ClassProductoServicioImp implements IProductoServicio {
-
 	//implementamos la inyeccion de dependencia
 	@Autowired
 	private IProducto iproductorepository;

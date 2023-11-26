@@ -66,7 +66,7 @@ public class ProductoController {
 		//enviamos a la vista
 		modelo.addAttribute("regproducto",busproducto);
 		//retornar  a la vista(formulario registrar )
-		return "Vistas/Auto/FrmRegProducto";
+		return "Vistas/Producto/FrmRegProducto";
 			
 	}  //fin del metodo editar..
 	@GetMapping("/Eliminar/{id}")
@@ -76,8 +76,6 @@ public class ProductoController {
 		List<ClassProducto> listado=iproductoservicio.ListadoProductos();
 		//enviamos a la vista...
 		modelo.addAttribute("listadoproductos",listado);
-		//retornamos a la vista
-		//return "/Vistas/Auto/ListadoAutos";
 		//retornamos al listado
 		return "redirect:/ControlProducto/ListadoProductos";
 		

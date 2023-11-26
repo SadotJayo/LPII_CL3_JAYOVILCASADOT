@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="head">
+		<title>Sistema de Inventario Web</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/Css/Estilo.css">
+	</head>
+	<body>
+		<header>
+			<img class="logo" src="/Imagenes/logo.jpg"/>
+		</header>
+		<nav th:fragment="menu" class="nav">
+			<div class="menu">
+			<a class="btn btn-primary justify-content-center" id="menu-item" th:href="@{/ControlProducto/ListadoProductos}" th:text="'INICIO'"></a>
+			<a class="btn btn-primary justify-content-center " th:href="@{/ControlProducto/ListadoProductos}" th:text="'PRODUCTOS'"></a>
+			<a class="btn btn-primary justify-content-center " th:href="@{/ControlProducto/ListadoProductos}" th:text="'COMPRAR'"></a>
+			<a class="btn btn-primary justify-content-center " th:href="@{/ControlProducto/ListadoProductos}" th:text="'SERVICIO'"></a>
+			<a class="btn btn-primary justify-content-center " th:href="@{/ControlProducto/ListadoProductos}" th:text="'CONCESIONARIO'"></a>
+			</div>			
+		</nav>
+		<footer th:fragment="footer" class="pie">
+			<p>Derechos reservados estudiantes de cibertec</p>
+		</footer>
+	</body>
+</html>

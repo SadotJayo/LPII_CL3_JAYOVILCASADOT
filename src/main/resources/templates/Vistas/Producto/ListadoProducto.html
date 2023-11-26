@@ -6,44 +6,55 @@
 	</title>
 	</head>
 	<body>
-		<header th:replace="PaginaMaestra::header">
-			
-		</header>
+		<header th:replace="PaginaMaestra::header"></header>
 		<nav th:replace="PaginaMaestra::menu"></nav>
-		<h1  align="center">	
-			Listado de productos
-		</h1>
-		<h2 align="center">
-			<a th:href="@{RegisProducto}" class="btn btn-primary">Registrar Nuevo Producto</a>
-		</h2>
-		<table align="center" border="2">
-			<tr><th>Codigo</th>
-			<th>Nombre</th>
-			<th>Pv</th>
-			<th>Stock</th>
-			<th>Pc</th>
-			<th>Est.</th>
-			<th>Des</th>
-			<th colspan="2">Acciones</th>
-			</tr>
-			<th:block th:each="p:${listadoautos}"></th>
-			<tr>
-				<td th:text="${p.idproductocl3}"></td>
-				<td th:text="${p.nombrecl3}"></td>
-				<td th:text="${p.precioventacl3}"></td>
-				<td th:text="${p.stock}"></td>
-				<td th:text="${p.preciocompcl3}"></td>
-				<td th:text="${p.estadocl3}"></td>
-				<td th:text="${p.descripcl3}"></td>
-				
-				<td>
-					<a th:href="@{Editar/}+${p.idproducto}" th:text="actualizar" class="btn btn-primary"></a>
-				</td>
-				
-				<td><a th:href="@{Eliminar/}+${p.idproducto}" th:text="Eliminar" class="btn btn-warning"></a></td>
-			</tr>
-			</th:block>
-		</table>
+		<h1  align="center">Listado de Productos</h1>
+		
+		<div class="container">
+  			<div class="row justify-content-center minh-100">
+    			<div class="col-lg-10">
+					<h2 align="center">
+						<a th:href="@{RegisProducto}" class="btn btn-primary">Registrar Nuevo Producto</a>
+					</h2>
+					<table class="table bg-white">
+						<thead class="thead-dark">
+							<tr>
+								<th>Codigo</th>
+								<th>Nombre</th>
+								<th>Precio Venta</th>
+								<th>Stock</th>
+								<th>Precio Compra</th>
+								<th>Estado</th>
+								<th>Descipcion</th>
+								<th colspan="2">Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<th:block th:each="p:${listadoproductos}"></th>
+								<tr>
+									<td th:text="${p.idproductocl3}"></td>
+									<td th:text="${p.nombrecl3}"></td>
+									<td th:text="${p.precioventacl3}"></td>
+									<td th:text="${p.stock}"></td>
+									<td th:text="${p.preciocompcl3}"></td>
+									<td th:text="${p.estadocl3}"></td>
+									<td th:text="${p.descripcl3}"></td>
+									
+									<td>
+										<a th:href="@{Editar/}+${p.idproductocl3}" th:text="actualizar" class="btn btn-primary"></a>
+									</td>
+									
+									<td><a th:href="@{Eliminar/}+${p.idproductocl3}" th:text="Eliminar" class="btn btn-warning"></a></td>
+								</tr>
+							</th:block>
+						</tbody>
+						
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		
 		<footer th:replace="PaginaMaestra::footer"></footer>
 	</body>
 </html>
